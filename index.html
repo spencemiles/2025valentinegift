@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day, Shantel!</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #FFCC99;
+            color: #6A4C4C;
+            text-align: center;
+            height: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: auto; /* Change this from 'hidden' to 'auto' to enable scrolling */
+        }
+
+        /* Background Image */
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://www.w3schools.com/w3images/roses.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: blur(5px);
+            z-index: -1;
+        }
+
+        /* Header Section */
+        .header {
+            font-size: 3em;
+            font-weight: 700;
+            color: #FF6347;
+            text-shadow: 2px 2px 5px rgba(255, 99, 71, 0.8);
+            margin-top: 50px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Subheading */
+        .subheading {
+            font-size: 1.6em;
+            margin-top: 15px;
+            color: #6A4C4C;
+            font-style: italic;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        /* Animated Hearts */
+        .hearts {
+            font-size: 120px;
+            color: #FF6347;
+            margin-top: 30px;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Button */
+        .action-btn {
+            margin-top: 40px;
+            padding: 15px 40px;
+            background-color: #FF6347;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .action-btn:hover {
+            background-color: #FF4500;
+        }
+
+        /* Surprise Message */
+        #message {
+            display: none;
+            font-size: 1.5em;
+            color: #6A4C4C;
+            margin-top: 30px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Floating Valentine Message */
+        .valentine-message {
+            background: #fef1f1;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 10px;
+            position: relative;
+            overflow: hidden;
+            font-size: 1.2rem;
+            color: #ff3366;
+            line-height: 1.6;
+            display: inline-block;
+            transform: scale(1);
+            animation: float 5s ease-in-out infinite;
+            margin-bottom: 30px;
+        }
+
+        @keyframes float {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .valentine-message p {
+            font-size: 1.4rem;
+            margin: 15px 0;
+        }
+
+        .valentine-message h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ff0066;
+        }
+
+        .valentine-message .emoji {
+            font-size: 2.5rem;
+        }
+
+        .valentine-message .heart {
+            color: red;
+            font-size: 3rem;
+        }
+
+        /* Footer */
+        footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            font-size: 1.2em;
+            color: #FF6347;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        /* Fade In Animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Mobile Responsiveness */
+        @media screen and (max-width: 768px) {
+            .header {
+                font-size: 2.5em;
+            }
+
+            .subheading {
+                font-size: 1.4em;
+            }
+
+            .hearts {
+                font-size: 100px;
+            }
+
+            .action-btn {
+                padding: 12px 30px;
+                font-size: 1em;
+            }
+
+            #message {
+                font-size: 1.2em;
+            }
+
+            footer {
+                font-size: 1em;
+            }
+        }
+
+        /* Very small screen (mobile) */
+        @media screen and (max-width: 480px) {
+            .header {
+                font-size: 2em;
+            }
+
+            .subheading {
+                font-size: 1.3em;
+            }
+
+            .hearts {
+                font-size: 80px;
+            }
+
+            .action-btn {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+
+            #message {
+                font-size: 1.1em;
+            }
+           
+            footer {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Image -->
+    <div class="background"></div>
+
+    <!-- Header Section -->
+    <div class="header">
+        <h1>Happy Valentine's Day, Babe</h1>
+        <p class="subheading">You are my heart, my happiness, my everything. 💖</p>
+    </div>
+
+    <!-- Animated Hearts -->
+    <div class="hearts">❤️</div>
+<br>
+<br>
+<br>
+<br>
+    <!-- Floating Valentine's Day Message -->
+    <div class="valentine-message">
+        <h1>Happy Valentine's Day, Babe 💖</h1>
+        <p>Babe, I know sometimes I can be a pain in the ass 😅, but it’s only because I care about you more than anything in this world 💖. I care about you so deeply, I’d jump to the moon for you 🌙💫. I just want to remind you that you’re mine, and that will never change because my love for you is endless 🥰.</p>
+        <p>To show you just how much you mean to me, I created this special surprise 🎁—a custom-coded website just for you 💻✨. It’s a small gift, but it’s filled with all the love I have for you 💖. There are so many more Valentine’s Days ahead, and I can’t wait to spend every single one of them with you 💕.</p>
+        <p>I love you so much, more than words could ever express 😘💖.</p>
+        <p class="heart">❤️</p>
+        <p class="emoji">And trust me, this is just a glimpse of all the love I want to share with you ❤️. You are my everything, and I can’t wait to keep showing you just how much you mean to me every single day 🌹💝.</p>
+    </div>
+
+    <!-- Button to Reveal Surprise -->
+<button class="action-btn" onclick="showSlideshow()">Click for a Sweet Surprise!</button>
+
+<!-- Slideshow Container -->
+<div class="floating-slideshow" id="slideshow">
+    <div class="mySlides fade">
+        <img src="https://i.ibb.co/gbK1ZPRd/HGOQ6510.jpg" alt="Slide 1">
+    </div>
+    <div class="mySlides fade">
+        <img src="https://i.ibb.co/Kcm3DHqJ/IMG-E3949.jpg" alt="Slide 2">
+    </div>
+    <div class="mySlides fade">
+        <img src="https://i.ibb.co/CpWwVGNV/JSQM9186.jpg" alt="Slide 3">
+    </div>
+    <div class="mySlides fade">
+        <img src="https://i.ibb.co/m7JWbMy/MFHB3292.jpg" alt="Slide 4">
+    </div>
+    <div class="mySlides fade">
+        <img src="https://i.ibb.co/JRB0PP57/OHIX3701.jpg" alt="Slide 5">
+    </div>
+</div>
+
+<style>
+    /* Floating Slideshow Styles */
+.floating-slideshow {
+    position: absolute;
+    top: 100%;  /* Position directly below the button */
+    left: 50%;
+    transform: translateX(-50%);  /* Center the slideshow horizontally */
+    width: 80%; /* Adjust to a percentage of the screen width for responsiveness */
+    max-width: 400px; /* Set a max width to keep it small */
+    height: auto;
+    z-index: 1000; /* Ensure it stays on top */
+    display: none; /* Initially hidden */
+    border-radius: 10px; /* Optional: rounded corners */
+    overflow: hidden; /* Hide overflow if the image exceeds the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: add some shadow for better visibility */
+}
+
+/* Hide slides by default */
+.mySlides {
+    display: none;
+    width: 100%; /* Ensure it takes the full width of the container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.mySlides img {
+    width: 100%; /* Ensure image is responsive and takes full container width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: rounded corners for images */
+}
+
+/* Optional: fade animation for smooth transition between slides */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Optional: slight spacing for the button */
+.action-btn {
+    margin-bottom: 10px;
+}
+
+</style>
+<script>
+    // Function to show the slideshow and scroll down to it
+    function showSlideshow() {
+        var slideshow = document.getElementById("slideshow");
+        slideshow.style.display = "block";  // Show the slideshow
+        startSlideShow();
+        
+        // Scroll the page down to the slideshow
+        window.scrollTo({
+            top: slideshow.offsetTop,
+            behavior: 'smooth'
+        });
+    }
+
+    // Slideshow functionality
+    var slideIndex = 0;
+    function startSlideShow() {
+        var slides = document.getElementsByClassName("mySlides");
+        for (var i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        slides[slideIndex-1].style.display = "block";  
+        setTimeout(startSlideShow, 3000); // Change slide every 3 seconds
+    }
+
+    // Close the slideshow when clicking outside of it
+    window.onclick = function(event) {
+        var slideshow = document.getElementById("slideshow");
+        var button = document.querySelector(".action-btn");
+
+        // If the clicked area is outside of the slideshow or button, hide the slideshow
+        if (event.target !== slideshow && event.target !== button) {
+            slideshow.style.display = "none";
+        }
+    }
+</script>
+    <!-- Surprise Message -->
+    <div id="message">
+        <p>Shantel, you light up my life in ways I never imagined. I love you more than words can say. 💕</p>
+    </div>
+   
+
+    <script>
+        // Show Surprise Message when button is clicked
+        function showMessage() {
+            const message = document.getElementById('message');
+            message.style.display = 'block';
+        }
+
+        // Automatically trigger a pop-up message after 3 seconds
+        setTimeout(function() {
+            alert("baby😘💖, you mean everything to me. Happy Valentine's Day 💖");
+        }, 3000);
+    </script>
+ <!-- Footer Section -->
+
+</body>
+</html>
+
